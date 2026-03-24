@@ -22,5 +22,174 @@
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-geist-sans), "Be Vietnam Pro", "Segoe UI", sans-serif;
+}
+
+/* React Datepicker Custom Overrides */
+.react-datepicker-wrapper {
+  display: block;
+  width: 100%;
+}
+
+.react-datepicker {
+  font-family: inherit !important;
+  border-radius: 1rem !important;
+  border: 1px solid #e5e7eb !important;
+  box-shadow: 0 10px 40px rgba(15, 23, 42, 0.08) !important;
+  padding: 0.5rem !important;
+}
+
+.react-datepicker__header {
+  background-color: transparent !important;
+  border-bottom: none !important;
+  padding-top: 0.5rem !important;
+}
+
+.react-datepicker__current-month,
+.react-datepicker-time__header,
+.react-datepicker-year-header {
+  font-weight: 700 !important;
+  font-size: 1rem !important;
+  color: #111827 !important;
+}
+
+.react-datepicker__day-name {
+  color: #6b7280 !important;
+  font-weight: 600 !important;
+}
+
+.react-datepicker__day {
+  border-radius: 9999px !important;
+  color: #374151 !important;
+}
+
+.react-datepicker__day:hover {
+  background-color: #f3f4f6 !important;
+}
+
+.react-datepicker__day--selected {
+  background-color: #2563eb !important;
+  color: #ffffff !important;
+}
+
+.react-datepicker__day--keyboard-selected {
+  background-color: #dbeafe !important;
+  color: #1d4ed8 !important;
+}
+
+/* Fix z-index so popup floats above z-10 form labels */
+.react-datepicker-popper {
+  z-index: 50 !important;
+}
+
+/* Custom Month and Year Dropdowns */
+.react-datepicker__month-dropdown-container {
+  width: 130px !important;
+}
+
+.react-datepicker__year-dropdown-container {
+  width: 80px !important;
+}
+
+.react-datepicker__month-dropdown-container,
+.react-datepicker__year-dropdown-container {
+  display: inline-flex;
+  position: relative !important;
+  /* Forces dropdown list to anchor correctly */
+  border: 1px solid #e5e7eb !important;
+  border-radius: 0.5rem !important;
+  background-color: white;
+  margin: 0.75rem 0.25rem 0.25rem 0.25rem !important;
+}
+
+.react-datepicker__month-read-view,
+.react-datepicker__year-read-view {
+  width: 100% !important;
+  padding: 0.35rem 0.5rem !important;
+  font-size: 0.875rem !important;
+  color: #374151 !important;
+  cursor: pointer;
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  gap: 0.25rem;
+  visibility: visible !important;
+}
+
+/* Hide the default down arrows because they look glitchy */
+.react-datepicker__month-read-view--down-arrow,
+.react-datepicker__year-read-view--down-arrow {
+  display: none !important;
+}
+
+.react-datepicker__month-dropdown,
+.react-datepicker__year-dropdown {
+  position: absolute !important;
+  top: 100% !important;
+  left: 0 !important;
+  width: 100% !important;
+  min-width: 100% !important;
+  z-index: 50 !important;
+  background-color: white !important;
+  border: 1px solid #e5e7eb !important;
+  border-radius: 0.5rem !important;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1) !important;
+  max-height: 200px !important;
+  overflow-y: auto !important;
+  overflow-x: hidden !important;
+  margin-top: 0.25rem !important;
+}
+
+.react-datepicker__month-option,
+.react-datepicker__year-option {
+  padding: 0.5rem 0.75rem !important;
+  cursor: pointer !important;
+  font-size: 0.875rem !important;
+  line-height: 1.5 !important;
+  text-align: center !important;
+  display: block !important;
+}
+
+.react-datepicker__month-option:hover,
+.react-datepicker__year-option:hover {
+  background-color: #f3f4f6 !important;
+}
+
+.react-datepicker__month-option--selected_month,
+.react-datepicker__year-option--selected_year {
+  background-color: #eff6ff !important;
+  color: #2563eb !important;
+  font-weight: 600 !important;
+}
+
+/* Hide the default checkmark ✓ so it doesn't overlap the text */
+.react-datepicker__month-option--selected,
+.react-datepicker__year-option--selected {
+  display: none !important;
+}
+
+/* Align navigation arrows relative to the dropdown buttons */
+.react-datepicker__navigation {
+  top: 0.75rem !important;
+  /* Moves arrows to align centrally with current month title */
+}
+
+.react-datepicker__navigation--previous {
+  left: 0.5rem !important;
+}
+
+.react-datepicker__navigation--next {
+  right: 0.5rem !important;
+}
+
+/* Custom scrollbar for the dropdowns */
+.react-datepicker__month-dropdown::-webkit-scrollbar,
+.react-datepicker__year-dropdown::-webkit-scrollbar {
+  width: 6px;
+}
+
+.react-datepicker__month-dropdown::-webkit-scrollbar-thumb,
+.react-datepicker__year-dropdown::-webkit-scrollbar-thumb {
+  background-color: #d1d5db;
+  border-radius: 3px;
 }
